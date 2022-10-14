@@ -324,7 +324,14 @@ public class Client
 
     private APIContext apiContext()
     {
-        APIContext context = new APIContext(pluginTask.getAccessToken());
+        APIContext context = new APIContext(
+                APIContext.DEFAULT_API_BASE,
+                APIContext.DEFAULT_VIDEO_API_BASE,
+                pluginTask.getApiVersion(),
+                pluginTask.getAccessToken(),
+                null,
+                null,
+                true);
         context.enableDebug(this.pluginTask.getEnableDebug());
         return context;
     }
