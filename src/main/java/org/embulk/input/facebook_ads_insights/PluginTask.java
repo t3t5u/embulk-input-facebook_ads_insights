@@ -1,5 +1,6 @@
 package org.embulk.input.facebook_ads_insights;
 
+import com.facebook.ads.sdk.APIContext;
 import org.embulk.config.Config;
 import org.embulk.config.ConfigDefault;
 import org.embulk.config.Task;
@@ -93,4 +94,8 @@ public interface PluginTask extends Task
     @Config("enable_debug")
     @ConfigDefault("false")
     public boolean getEnableDebug();
+
+    @Config("api_version")
+    @ConfigDefault(APIContext.DEFAULT_API_VERSION)
+    String getApiVersion();
 }
